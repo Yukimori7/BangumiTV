@@ -91,6 +91,35 @@ pnpm deploy:worker
 3. **搞定**: 去 `Actions` 页面看一眼 `Update Data & Deploy Worker`
    跑没跑。默认每 2 小时更新一次。
 
+## 在其他网页中使用
+
+如果你想把追番进度挂到自己的博客或网站上，只需要引入 CSS 和 JS，然后配置一下 API
+地址就行。
+
+```html
+<!-- 1. 引入样式 -->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bangumi-tv@latest/public/dist/bangumi.css"
+>
+
+<!-- 2. 配置参数 -->
+<script>
+    const bgmConfig = {
+        apiUrl: "https://your-worker-domain.workers.dev", // 换成你部署好的 Worker 域名
+        quote: "生命不止，追番不息！", // 选填，自定义一句话
+    };
+</script>
+
+<!-- 3. 放置容器 -->
+<div class="bgm-container"></div>
+
+<!-- 4. 引入脚本 -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bangumi-tv@latest/public/dist/bangumi.js"
+></script>
+```
+
 ## 目录结构
 
 - `src/index.ts`: Worker 的主代码。
