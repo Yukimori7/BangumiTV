@@ -1,0 +1,27 @@
+{
+  "name": "bangumi-tv",
+  "version": "1.0.0",
+  "description": "Render your bangumi.tv progress on a static web page",
+  "main": "./public/dist/bangumi.js",
+  "style": "./public/dist/bangumi.css",
+  "files": [
+    "public/dist",
+    "README.md"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "tsx scripts/build.ts",
+    "collect": "tsx scripts/collection.ts",
+    "deploy:worker": "tsx scripts/collection.ts && wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/kv-asset-handler": "^0.4.0",
+    "@cloudflare/workers-types": "^4.20251121.0",
+    "@types/node": "^24.10.1",
+    "esbuild": "^0.27.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.50.0"
+  }
+}

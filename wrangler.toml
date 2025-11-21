@@ -1,0 +1,9 @@
+name = "bangumi-tv-api"
+main = "src/index.ts"
+compatibility_date = "2025-11-20"
+
+# 触发器：当代码推送到 main 分支时自动部署 (需要连接 Cloudflare)
+# 但通常我们依赖 GitHub Actions 里的 wrangler 命令来部署
+
+[site]
+bucket = "./public"
